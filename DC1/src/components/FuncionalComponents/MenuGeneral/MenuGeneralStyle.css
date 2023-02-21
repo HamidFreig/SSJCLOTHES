@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  color: black;
+  justify-content: center;
+  padding: 20px;
+  padding-inline: 100px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: orangered;
+  border-radius: 100px;
+}
+
+.Link{
+  text-decoration: none;
+  color:black
+}

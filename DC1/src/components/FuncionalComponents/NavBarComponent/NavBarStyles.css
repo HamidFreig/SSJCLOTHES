@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+.NavBar {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.NavBarStyle {
+  height: 70px;
+  display: flex;
+  background-color: orangered;
+  margin: 10px;
+  border-radius: 30px;
+}
+
+.TittleNavBar {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  color: black;
+  width: 100%;
+}
+
+.LogoStyle {
+  margin-top: 5px;
+  margin-left: 20px;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+}
+
+.LogoCarrito {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  margin-left: 93%;
+  margin-top: 3px;
+}
+
+.NumeroCarrito {
+  position: absolute;
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 900;
+  margin-left: 92%;
+  margin-top: 3px;
+  color: black;
+}

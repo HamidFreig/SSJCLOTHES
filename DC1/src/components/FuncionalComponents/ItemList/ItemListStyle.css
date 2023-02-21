@@ -1,0 +1,13 @@
+.ItemList{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    gap:60PX;
+    padding: 20px;
+
+}
+
+.Link{
+    text-decoration: none;
+    color:black
+  }
