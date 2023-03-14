@@ -1,8 +1,6 @@
 import "../Item/ItemStyle.css";
 
 const Item = ({ producto }) => {
-
-
     return (
         <div className="Card">
             <h1>
@@ -10,12 +8,8 @@ const Item = ({ producto }) => {
             </h1>
             <img className="Img" src={producto.img} alt="" />
             <p className="Price">${producto.price} </p>
-            <div className="Count">
-
-            </div>
         </div>
     );
 };
-
 
 export default Item;
