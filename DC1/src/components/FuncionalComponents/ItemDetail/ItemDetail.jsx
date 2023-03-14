@@ -1,5 +1,6 @@
 import { useState,useContext } from "react";
 import { CartContext } from "../../../context/CartContex";
+import { Link } from "react-router-dom";
 import "./ItemDetail.css"
 const ItemDetail = ({ itemId }) => {
 
@@ -16,7 +17,7 @@ const ItemDetail = ({ itemId }) => {
   }
 
   function AddItem(item,count){
-    if(count != 0){
+    if(count !== 0){
       contexto.AddItem(item,count)
       setCount(0)
     }
@@ -40,8 +41,9 @@ const ItemDetail = ({ itemId }) => {
                 <button className="ButtonCount" onClick={()=>setCount(count+1)}>+</button>
                 <div>
                 <button onClick={() => (AddItem(item, count))}>AÑADIR AL CARRITO</button>
-                <button>SEGUIR COMPRANDO</button>
-                <button>TERMINAR COMPRA</button></div>
+                <Link to={"/"}><button>SEGUIR COMPRANDO</button></Link>
+                <Link to={'/cart'}><button>TERMINAR COMPRA</button></Link>
+                </div>
                 </div>
             ))}
             

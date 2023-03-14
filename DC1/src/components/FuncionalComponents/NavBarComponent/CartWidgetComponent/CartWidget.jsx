@@ -1,7 +1,6 @@
 import "./CartWidgetStyle.css";
 import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContex";
-import { CartProduct } from "../../CartProduct/CartProduct";
 import { Link } from "react-router-dom";
 
 export default function CartWidget() {
