@@ -16,9 +16,14 @@ const ItemDetail = ({ itemId }) => {
   }
 
   function AddItem(item,count){
-    contexto.AddItem(item,count)
-    console.log(contexto.cart)
-    setCount(0)
+    if(count != 0){
+      contexto.AddItem(item,count)
+      setCount(0)
+    }
+    else{
+      alert("NO SE PUEDE AGREGAR AL CARRITO")
+    }
+    
 
   }
     return (
@@ -34,7 +39,7 @@ const ItemDetail = ({ itemId }) => {
                 <p className="CountNumber">{count}</p>
                 <button className="ButtonCount" onClick={()=>setCount(count+1)}>+</button>
                 <div>
-                <button onClick={() => AddItem(item, count)}>AÑADIR AL CARRITO</button>
+                <button onClick={() => (AddItem(item, count))}>AÑADIR AL CARRITO</button>
                 <button>SEGUIR COMPRANDO</button>
                 <button>TERMINAR COMPRA</button></div>
                 </div>
