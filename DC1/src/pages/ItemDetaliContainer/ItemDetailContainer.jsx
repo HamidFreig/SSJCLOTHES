@@ -1,31 +1,29 @@
 import ItemDetail from "../../components/FuncionalComponents/ItemDetail/ItemDetail";
-import Products from "../../data/Products";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+
 const ItemDetailContainer = () => {
     const { ItemId } = useParams();
     const [itemProduct, setItemProduct] = useState([]);
 
-    const getProductoItem = new Promise((res, rej) => {
-        if (ItemId) {
-            const filterproduct = Products.filter((item) => item.id == ItemId);
-            res(filterproduct);
-        }
-    });
+    const getProductoItem = () => {
+        const db = getFirestore();
+        const querySnapshot = doc(db, "products", ItemId);
+
+        getDoc(querySnapshot)
+            .then((res) => {
+                console.log(res.data())
+            })
+            .catch((error) => console.log(error));
+    };
 
     useEffect(() => {
-        getProductoItem
-            .then((response) => {
-                setItemProduct(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    },[ItemId]);
-
+        getProductoItem();
+    }, [ItemId]);
     return (
         <div>
-            <ItemDetail itemId={itemProduct} />
+            <ItemDetail product={itemProduct} />
         </div>
     );
 };
