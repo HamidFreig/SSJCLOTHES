@@ -3,7 +3,7 @@ import "./CartProduct.css";
 import { CartContext } from "../../../context/CartContex";
 import {Link} from "react-router-dom"
 export const CartProduct = () => {
-    const { cart,ClearCart,RemoveProduct } = useContext(CartContext);
+    const { cart,ClearCart,RemoveProduct,total } = useContext(CartContext);
 
 
     return (
@@ -14,14 +14,16 @@ export const CartProduct = () => {
                         <img className="Img" src={product.img} alt="" />
                         <h1>PRECIO: {product.price} </h1>
                         <h1>CANTIDAD: {product.quantify} </h1>
-                        <button onClick={() => {RemoveProduct(product.id)}}>ELIMINAR PRODUCTO</button>
+                        <button className="ButtonRemove" onClick={() => {RemoveProduct(product)}}>ELIMINAR PRODUCTO</button>
                     </div>
                 ))}
-                <Link to={'/'}><button className="Button" onClick={() => ClearCart()}>VACIAR CARRITO</button></Link>
+                
             </div>
         
             <div className="Payment">
-                <h1>pago</h1>
+                {(cart.length !== 0) ? <Link  to={'/'}><button className="ButtonClear" onClick={() => ClearCart()}>VACIAR CARRITO</button></Link> : <h1 style={{justifyContent:'CENTER',textAlign:'CENTER'}}>NO HAY PRODUCTOS EN EL CARRITO</h1>}
+            
+                <h1 style={{justifyContent:'CENTER',textAlign:'CENTER'}}>TOTAL A PAGAR: {total} USD</h1>
             </div>
         </section>
     );

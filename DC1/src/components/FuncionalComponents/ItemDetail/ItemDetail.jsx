@@ -31,19 +31,19 @@ const ItemDetail = ({ itemId }) => {
         <div className="ItemProduct">
             {itemId.map((item) => (
                 <div className="CardProduct" key={item.id}>
-                    <h1>
-                        {item.category} {item.brand}
-                    </h1>
-                    <img className="Img" src={item.img} alt="" />
-                    <p className="Price">${item.price} </p>
-                    <button className="ButtonCount" onClick={()=>CountFuction()}>-</button>
-                <p className="CountNumber">{count}</p>
-                <button className="ButtonCount" onClick={()=>setCount(count+1)}>+</button>
-                <div>
-                <button onClick={() => (AddItem(item, count))}>AÑADIR AL CARRITO</button>
-                <Link to={"/"}><button>SEGUIR COMPRANDO</button></Link>
-                <Link to={'/cart'}><button>TERMINAR COMPRA</button></Link>
-                </div>
+                  <h1>
+                  {item.category} {item.brand}
+                  </h1>
+                  <img className="Img" src={item.img} alt="" />
+                  <p className="Price">${item.price} USD</p>
+                  <button className="ButtonCount" onClick={()=>CountFuction()}>-</button>
+                  <p className="CountNumber">{count}</p>
+                  <button className="ButtonCount" onClick={()=>setCount(count+1)}>+</button>
+                  <div className="Buttons">
+                    <button className="Button" onClick={() => (AddItem(item, count))}>AÑADIR AL CARRITO</button>
+                    <Link to={"/"}><button className="Button" >SEGUIR COMPRANDO</button></Link>
+                    <Link to={'/cart'}><button className="Button">TERMINAR COMPRA</button></Link>
+                  </div>
                 </div>
             ))}
             

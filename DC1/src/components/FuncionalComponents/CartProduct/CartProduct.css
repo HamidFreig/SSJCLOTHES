@@ -31,7 +31,19 @@
     width: 50%;
 }
 
-.Button{
-    justify-content: center;
-    text-align: center;
+.ButtonClear{
+    margin-left: 40%;
+    background-color: orangered;
+    color: black;
+    border-radius: 10px;
+    font-size: 20PX;
+    margin-top: 20px;
+
+}
+
+.ButtonRemove{
+    background-color: red;
+    color: WHITE;
+    font-size: 20px;
+    border-radius: 10PX;
 }
