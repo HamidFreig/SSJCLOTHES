@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
 
         getDoc(querySnapshot)
             .then((res) => {
-                console.log(res.data())
+                setItemProduct({ id: res.id, ...res.data() });
             })
             .catch((error) => console.log(error));
     };
@@ -21,6 +21,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         getProductoItem();
     }, [ItemId]);
+    
     return (
         <div>
             <ItemDetail product={itemProduct} />

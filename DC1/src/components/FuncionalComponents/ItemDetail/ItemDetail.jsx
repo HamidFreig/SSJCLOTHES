@@ -6,8 +6,6 @@ const ItemDetail = ({ product }) => {
     const [count, setCount] = useState(0);
     const contexto = useContext(CartContext);
 
-
-
     function CountFuction() {
         if (count === 0) {
             return setCount(0);
@@ -27,20 +25,18 @@ const ItemDetail = ({ product }) => {
 
     return (
         <div className="ItemProduct">
-            {product.map((item) => (
-                <div className="CardProduct" key={item.id}>
-                    <h1>{item.category} {item.brand}</h1>
-                    <img className="Img" src={item.img} alt="" />
-                    <p className="Price">${item.price} USD</p>
+                <div className="CardProduct" key={product.id}>
+                    <h1>{product.category} {product.brand}</h1>
+                    <img className="Img" src={product.img} alt="" />
+                    <p className="Price">${product.price} USD</p>
                     <button className="ButtonCount" onClick={() => CountFuction()}>-</button>
                     <p className="CountNumber">{count}</p>
                     <button className="ButtonCount" onClick={() => setCount(count + 1)}>+</button>
-                    <div className="Buttons"><button className="Button" onClick={() => AddItem(item, count)}>AÑADIR AL CARRITO</button>
+                    <div className="Buttons"><button className="Button" onClick={() => AddItem(product, count)}>AÑADIR AL CARRITO</button>
                      <Link to={"/"}><button className="Button">SEGUIR COMPRANDO</button></Link>
                      <Link to={"/cart"}><button className="Button">TERMINAR COMPRA</button></Link>
                     </div>
                 </div>
-            ))}
         </div>
     );
 };
