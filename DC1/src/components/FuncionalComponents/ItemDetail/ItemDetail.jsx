@@ -3,12 +3,12 @@ import { CartContext } from "../../../context/CartContex";
 import { Link } from "react-router-dom";
 import "./ItemDetail.css";
 const ItemDetail = ({ product }) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
     const contexto = useContext(CartContext);
-
+    console.log(product)
     function CountFuction() {
-        if (count === 0) {
-            return setCount(0);
+        if (count === 1) {
+            return setCount(1);
         } else {
             return setCount(count - 1);
         }
@@ -17,7 +17,7 @@ const ItemDetail = ({ product }) => {
     function AddItem(item, count) {
         if (count !== 0) {
             contexto.AddItem(item, count);
-            setCount(0);
+            setCount(1);
         } else {
             alert("NO SE PUEDE AGREGAR AL CARRITO");
         }
