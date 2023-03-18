@@ -5,6 +5,7 @@ import {Link} from "react-router-dom"
 import {getFirestore,collection,addDoc} from "firebase/firestore"
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Swal from "sweetalert2";
 
 
 export const CartProduct = () => {
@@ -12,7 +13,8 @@ export const CartProduct = () => {
     const db = getFirestore();
     const [datos, setDatos]= useState({
         nombre:'',
-        email:'',
+        email1:'',
+        email2:'',
         phone:''
     })
 
@@ -27,29 +29,43 @@ export const CartProduct = () => {
     
 
     const CreateOrder = (event) =>{
-        const querySnapshot = collection(db, "orders");
-        addDoc(querySnapshot, {
 
-            buyer:{
-                email: datos.email,
-                name: datos.nombre,
-                phone : datos.phone,
-            },
-            product: cart.map((product)=>{
-                return{
-                    brand: product.brand,
-                    id: product.id,
-                    price: product.price,
-                    quantify : product.quantify,
-                };
-            }), 
-            total: cart.reduce((acc, curr)=>acc + curr.quantify*curr.price,0)
-            
-        }).then((res)=>{
-            alert(`se ha generado la order ${res.id}`)
-            console.log(datos.nombre)})
-          .catch((error)=>console.log(error))
-
+        if(datos.email1 !== datos.email2 ){
+            Swal.fire(
+                'CORREOS DIFERENTES',
+                'intente nuevamente',
+                'error'
+              );
+        }else{
+            const querySnapshot = collection(db, "orders");
+            addDoc(querySnapshot, {
+    
+                buyer:{
+                    email: datos.email1,
+                    name: datos.nombre,
+                    phone : datos.phone,
+                },
+                product: cart.map((product)=>{
+                    return{
+                        brand: product.brand,
+                        id: product.id,
+                        price: product.price,
+                        quantify : product.quantify,
+                    };
+                }), 
+                total: cart.reduce((acc, curr)=>acc + curr.quantify*curr.price,0)
+                
+            }).then((res)=>{
+                Swal.fire(
+                    'COMPRA REALIZADA',
+                    `se ha generado la order ${res.id}`,
+                    'success'
+                  )
+                  })
+              .catch((error)=>console.log(error))
+    
+        }
+        
     }
     return (
         <section className="PantallaDividida">
@@ -86,14 +102,14 @@ export const CartProduct = () => {
                         helperText="Please enter your email"
                         id="demo-helper-text-aligned-no-helper"
                         label="Email"
-                        name="email"
+                        name="email1"
                         onChange={HandleInputChange}
                     />                
                     <TextField
                         helperText="Please repeat your email"
                         id="demo-helper-text-aligned-no-helper"
                         label="Email"
-                        name="email"
+                        name="email2"
                         onChange={HandleInputChange}
                     />
                     <TextField

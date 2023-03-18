@@ -13,7 +13,7 @@ export default function CartWidget() {
                     src="https://cdn-icons-png.flaticon.com/512/107/107831.png"
                     alt=""
                 />
-                <p className="NumeroCarrito">{cart?.length} </p>
+                <p className="NumeroCarrito">${cart.reduce((acc,curr)=>acc + curr.price*curr.quantify,0)} </p>
             </div>
         </Link>
     );

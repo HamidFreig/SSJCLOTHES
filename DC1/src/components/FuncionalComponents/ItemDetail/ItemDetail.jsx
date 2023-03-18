@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { CartContext } from "../../../context/CartContex";
 import { Link } from "react-router-dom";
 import "./ItemDetail.css";
+import Swal from "sweetalert2";
+
 const ItemDetail = ({ product }) => {
     const [count, setCount] = useState(1);
     const contexto = useContext(CartContext);
@@ -18,6 +20,11 @@ const ItemDetail = ({ product }) => {
         if (count !== 0) {
             contexto.AddItem(item, count);
             setCount(1);
+            Swal.fire(
+                'ARTICULO AGREGADO AL CARRITO',
+                ``,
+                'success'
+              )
         } else {
             alert("NO SE PUEDE AGREGAR AL CARRITO");
         }
