@@ -1,8 +1,10 @@
 ## SSJ-CLOTHES 
 
+es una tienda la cual puedes comprar productos de vestuario masculino, esencialmente de la marca "Thrasher"
 
 ## LIBRERIAS UTILIZADAS
 
+MUI: P
 
 
 
