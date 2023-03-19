@@ -56,11 +56,14 @@ export const CartProduct = () => {
                 total: cart.reduce((acc, curr)=>acc + curr.quantify*curr.price,0)
                 
             }).then((res)=>{
+
                 Swal.fire(
                     'COMPRA REALIZADA',
-                    `se ha generado la order ${res.id}`,
-                    'success'
-                  )
+                    `se ha generado la orden ${res.id}`,
+                    'success',
+                  );
+
+                  ClearCart();
                   })
               .catch((error)=>console.log(error))
     
@@ -121,7 +124,7 @@ export const CartProduct = () => {
                     />
                 </Box> : <h1></h1>}
                 
-                {(cart.length !== 0) ? <button onClick={CreateOrder}className='ButtonCheck'>GENERAR ORDEN</button>:<h1></h1>}
+                {(cart.length !== 0) ? <Link to={"/"}><button onClick={CreateOrder}className='ButtonCheck'>GENERAR ORDEN</button></Link>:<h1></h1>}
                 
             </div>
         </section>
