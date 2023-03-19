@@ -1,4 +1,4 @@
-![](./DC1/gif.gif)
+![](./gif.mp4)
 
 
 ## SSJ-CLOTHES 

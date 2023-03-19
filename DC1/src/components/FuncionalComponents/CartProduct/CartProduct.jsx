@@ -62,7 +62,6 @@ export const CartProduct = () => {
                     `se ha generado la orden ${res.id}`,
                     'success',
                   );
-
                   ClearCart();
                   })
               .catch((error)=>console.log(error))
