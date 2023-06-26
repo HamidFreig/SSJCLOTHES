@@ -1,27 +1,27 @@
-.CardProduct{
-    border-style:dashed ;
-    border-color: orangered;
-    width: 300px;
-    height: 650px;
-    text-align: center;
-    font-family: "Oswald", sans-serif;
-    border-radius: 25px;
+.CardProduct {
+  border-style: dashed;
+  border-color: orangered;
+  width: 300px;
+  height: 650px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  border-radius: 25px;
+}
 
-    }
-
-    .ItemProduct{
-        display: grid;
-        justify-content: center;
-        margin-top: 50px;
-    }
-    .Buttons{
-    margin-top: 10PX;
-    }
-    .Button{
-        margin-left: 10PX;
-        justify-content: center;
-        align-items: center;
-        background-color: orangered;
-        color: white;
-        border-radius: 10PX;
-    }
+.ItemProduct {
+  display: grid;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Buttons {
+  margin-top: 10px;
+}
+.Button {
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: orangered;
+  color: white;
+  border-radius: 10px;
+}

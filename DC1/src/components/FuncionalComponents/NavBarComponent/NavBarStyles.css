@@ -52,3 +52,9 @@
   margin-top: 3px;
   color: black;
 }
+
+@media (max-width: 420px) {
+  .LogoStyle {
+    margin-left: 3px;
+  }
+}

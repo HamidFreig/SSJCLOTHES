@@ -1,13 +1,32 @@
-.ItemList{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-content: center;
-    gap:60PX;
-    padding: 20px;
-
+.ItemList {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  gap: 60px;
+  padding: 20px;
 }
 
-.Link{
-    text-decoration: none;
-    color:black
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 1025px) {
+  .ItemList {
+    grid-template-columns: auto auto auto;
+    gap: 30px;
   }
+}
+
+@media (max-width: 720px) {
+  .ItemList {
+    grid-template-columns: auto auto;
+    gap: 30px;
+  }
+}
+@media (max-width: 420px) {
+  .ItemList {
+    grid-template-columns: auto;
+    gap: 30px;
+  }
+}

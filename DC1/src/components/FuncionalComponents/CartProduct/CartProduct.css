@@ -1,59 +1,94 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
-
-
-.PantallaDividida{
-    display: flex;
-    text-align: center;
+.PantallaDividida {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: center;
 }
 
-.ProductsCard{
-    width: 50%;
+.ProductsCard {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.Product {
+  border-style: solid;
+  border-color: black;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+}
+.Payment {
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1025px) {
+  .PantallaDividida {
+    grid-template-columns: auto;
+  }
+
+  .Payment {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .PantallaDividida {
+    grid-template-columns: auto;
+  }
+
+  .Payment {
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .PantallaDividida {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+
+  .inputs {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     justify-content: center;
-    gap:60PX;
-    padding: 20px;
+    margin-bottom: 20px;
+  }
 }
 
-.Product{
-    border-style:solid ;
-    border-color: black;
-    border-radius: 20px;
-    padding: 15px;
-    text-align: center;    
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
-}
-.Payment{
-    width: 50%;
-    justify-content: center;
-    align-items: center;
+.ButtonClear {
+  background-color: orangered;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
-.ButtonClear{
-    background-color: orangered;
-    color: white;
-    border-radius: 10px;
-    font-size: 20PX;
-    margin-top: 20px;
-
+h1 {
+  font-family: "Oswald", sans-serif;
 }
 
-h1{font-family: "Oswald", sans-serif;}
-
-.ButtonRemove{
-    background-color: red;
-    color: WHITE;
-    font-size: 20px;
-    border-radius: 10PX;
+.ButtonRemove {
+  background-color: red;
+  color: WHITE;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
-.ButtonCheck{
-    margin-top: 20PX;
-    background-color: green;
-    color: WHITE;
-    font-size: 20px;
-    border-radius: 10PX;
+.ButtonCheck {
+  margin-top: 20px;
+  background-color: green;
+  color: WHITE;
+  font-size: 20px;
+  border-radius: 10px;
 }
-

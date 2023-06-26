@@ -16,3 +16,52 @@
   margin-top: 3px;
   color: black;
 }
+
+@media (max-width: 1025px) {
+  .LogoCarrito {
+    margin-left: 89%;
+  }
+  .NumeroCarrito {
+    margin-left: 95%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .LogoCarrito {
+    margin-left: 85%;
+  }
+  .NumeroCarrito {
+    margin-left: 93%;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 420px) {
+  .LogoCarrito {
+    margin-left: 72%;
+  }
+  .NumeroCarrito {
+    margin-left: 86%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .LogoCarrito {
+    margin-left: 73%;
+  }
+  .NumeroCarrito {
+    margin-left: 89%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 365px) {
+  .LogoCarrito {
+    margin-left: 72%;
+  }
+  .NumeroCarrito {
+    margin-left: 88%;
+    margin-top: 20px;
+  }
+}
