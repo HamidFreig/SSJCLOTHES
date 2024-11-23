@@ -1,5 +1,5 @@
-(ABRIR EN MODO INCOGNITO)
-LINK: https://ssjclothess.vercel.app/
+
+LINK:(https://ssjclothess-hamidfreig.vercel.app/)
 
 
 ![](./g1.gif)
