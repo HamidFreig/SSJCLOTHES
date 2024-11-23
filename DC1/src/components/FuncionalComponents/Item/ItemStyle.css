@@ -6,7 +6,7 @@
 }
 
 .Card {
-  border-style: dashed;
+  border-style: solid;
   border-color: orangered;
   width: 300px;
   height: 430px;
